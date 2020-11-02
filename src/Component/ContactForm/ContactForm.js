@@ -17,6 +17,15 @@ class ContactForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
+    // Перевірка на ввід числа
+    if (!Number(this.state.number)) {
+      alert("В полі Number було введено не число, повторіть спробу");
+
+      this.setState({
+        number: "",
+      });
+      return;
+    }
 
     this.props.onAddContact(this.state.name, this.state.number);
 
@@ -28,7 +37,6 @@ class ContactForm extends Component {
 
   render() {
     const { name, number } = this.state;
-
     return (
       <form className={styles.contactForm} onSubmit={this.handleSubmit}>
         <label>

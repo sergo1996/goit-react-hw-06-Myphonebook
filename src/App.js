@@ -11,24 +11,23 @@ import { connect } from "react-redux";
 
 // import { v4 as uuidv4 } from "uuid";
 
-function App({ value }) {
-  // console.log(value);
+function App({ value, filter }) {
   return (
     <div>
       <Title />
       <ContactForm />
       <ContactList />
-      {value.length > 1 && <Filter />}
+      {(value.length > 1 || filter) && <Filter />}
     </div>
   );
 }
 
 const mapStateToProps = (state) => ({
   value: state.contacts.items,
+  filter: state.contacts.filter,
 });
 
 export default connect(mapStateToProps)(App);
-
 // class App extends Component {
 //   state = {
 //     contacts: [],
