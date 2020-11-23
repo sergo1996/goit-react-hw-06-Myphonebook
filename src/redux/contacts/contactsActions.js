@@ -15,4 +15,11 @@ const deleteContact = createAction("contacts/delete");
 
 const handleChangeFilter = createAction("contacts/changeFilter");
 
-export default { addContact, deleteContact, handleChangeFilter };
+const handleChangetheme = createAction("contacts/changeTheme");
+
+export default {
+  addContact,
+  deleteContact,
+  handleChangeFilter,
+  handleChangetheme,
+};

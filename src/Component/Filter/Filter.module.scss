@@ -1,21 +1,27 @@
 .section {
-  margin: 0 auto 20px;
-  display: flex;
-  flex-direction: column;
-  width: 450px;
-  padding: 10px;
-  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
-    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
-  border-radius: 2px;
-}
-
-.label {
-  font-size: 24px;
-}
-
-.input {
-  font-size: 20px;
-  height: 40px;
-  width: 95%;
-  border-color: #6b6e72;
-}
+  margin: 0 auto;
+  margin-top: 10px;
+  border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+  width: 420px;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+      0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  }
+  
+  .label {
+    font-size: 20px;
+  }
+  
+  .input {
+    display: block;
+    color: #171718;
+    font-size: 1.1rem;
+    padding: 4px;
+    border-radius: 4px;
+    border: 1px solid #bdbdbd;
+    width: 100%;
+    outline: 0;
+  }

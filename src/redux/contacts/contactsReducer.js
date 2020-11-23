@@ -19,7 +19,12 @@ const filter = createReducer("", {
   [contactsActions.handleChangeFilter]: (state, action) => action.payload,
 });
 
+const changethem = createReducer(true, {
+  [contactsActions.handleChangetheme]: (state, action) => action.payload,
+});
+
 export default combineReducers({
   items,
   filter,
+  changethem,
 });

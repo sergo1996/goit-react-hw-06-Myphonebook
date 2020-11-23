@@ -3,14 +3,16 @@ import styles from "./ContactListItem.module.scss";
 import PropTypes from "prop-types";
 
 import { connect } from "react-redux";
-import contactsActions from "../../redux/contacts/contactsActions";
+import contactsActions from "c:/Users/serhiy/Desktop/toggle+6.zip/src/redux/contacts/contactsActions";
 
-const ContactListItem = ({ name, number, delCont }) => (
-  <li className={styles.listItem}>
-    <p className={styles.listItemInfo}>{name}:</p>
-    <p className={styles.listItemInfo}>{number}</p>
-    <button className={styles.btn} onClick={delCont}>
-      Delete
+const ContactListItem = ({ name, number, delCont, theme }) => (
+  <li className={theme ? styles.listItem : styles.darck}>
+    <p className={styles.contact}>
+      <span>{name}:</span> {number}
+    </p>
+
+    <button type="button" className={styles.button} onClick={delCont}>
+      &#10006;
     </button>
   </li>
 );
@@ -24,7 +26,7 @@ ContactListItem.propTypes = {
 const mapStateToProps = (state, ownProps) => {
   const item = state.contacts.items.find((item) => item.id === ownProps.id);
 
-  return { ...item };
+  return { ...item, theme: state.contacts.changethem };
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
